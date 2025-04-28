@@ -1,0 +1,132 @@
+local ScreenGui2 = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Fling = Instance.new("TextButton")
+local PunchTool = Instance.new("TextButton")
+local Frame_2 = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local Frame_3 = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
+local Open = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui2.Name = "ScreenGui2"
+ScreenGui2.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui2
+Frame.BackgroundColor3 = Color3.fromRGB(89, 89, 89)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 3
+Frame.Position = UDim2.new(0.0237154141, 0, 0.426540285, 0)
+Frame.Size = UDim2.new(0, 250, 0, 384)
+
+Fling.Name = "Fling"
+Fling.Parent = Frame
+Fling.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Fling.BackgroundTransparency = 1.000
+Fling.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Fling.BorderSizePixel = 0
+Fling.Position = UDim2.new(0.100000001, 0, 0.596354187, 0)
+Fling.Size = UDim2.new(0, 200, 0, 50)
+Fling.Font = Enum.Font.Sarpanch
+Fling.Text = "Fling"
+Fling.TextColor3 = Color3.fromRGB(0, 0, 0)
+Fling.TextSize = 55.000
+
+PunchTool.Name = "Punch Tool"
+PunchTool.Parent = Frame
+PunchTool.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PunchTool.BackgroundTransparency = 1.000
+PunchTool.BorderColor3 = Color3.fromRGB(0, 0, 0)
+PunchTool.BorderSizePixel = 0
+PunchTool.Position = UDim2.new(0, 0, 0.341145843, 0)
+PunchTool.Size = UDim2.new(0, 250, 0, 50)
+PunchTool.Font = Enum.Font.Sarpanch
+PunchTool.Text = "Punch Tool"
+PunchTool.TextColor3 = Color3.fromRGB(0, 0, 0)
+PunchTool.TextSize = 55.000
+PunchTool.TextWrapped = true
+
+Frame_2.Parent = Frame
+Frame_2.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame_2.BorderSizePixel = 0
+Frame_2.Size = UDim2.new(0, 250, 0, 52)
+
+TextLabel.Parent = Frame_2
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Size = UDim2.new(0, 250, 0, 50)
+TextLabel.Font = Enum.Font.Sarpanch
+TextLabel.Text = "Punch Fling V1"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 60.000
+TextLabel.TextWrapped = true
+
+Frame_3.Parent = Frame
+Frame_3.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+Frame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame_3.BorderSizePixel = 0
+Frame_3.Position = UDim2.new(0, 0, 0.864583313, 0)
+Frame_3.Size = UDim2.new(0, 250, 0, 52)
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+TextButton.BackgroundTransparency = 1.000
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.796000004, 0, 0.8671875, 0)
+TextButton.Size = UDim2.new(0, 51, 0, 50)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "X"
+TextButton.TextColor3 = Color3.fromRGB(189, 0, 0)
+TextButton.TextSize = 40.000
+TextButton.TextStrokeColor3 = Color3.fromRGB(189, 0, 0)
+
+TextButton.MouseButton1Click:Connect(function()
+	Frame.Visible = false
+end)
+
+
+Open.Name = "Open"
+Open.Parent = ScreenGui2
+Open.BackgroundColor3 = Color3.fromRGB(93, 93, 93)
+Open.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Open.BorderSizePixel = 0
+Open.Position = UDim2.new(0.88300395, 0, 0.940758288, 0)
+Open.Size = UDim2.new(0, 148, 0, 50)
+Open.Font = Enum.Font.Sarpanch
+Open.Text = "Punch Fling"
+Open.TextColor3 = Color3.fromRGB(0, 0, 0)
+Open.TextSize = 30.000
+Open.Active = true
+Open.Draggable = true
+
+PunchTool.MouseButton1Click:Connect(function()
+	local tool = Instance.new("Tool")
+	tool.Name = "Punch Tool"
+	local anim2 = Instance.new("Animation")
+	anim2.Parent = tool
+	tool.RequiresHandle = false
+	anim2.AnimationId = "rbxassetid://243827693"
+	tool.Parent = game.Players.LocalPlayer.Backpack
+	local plr = game.Players.LocalPlayer
+	local hum = plr.Character:FindFirstChild("Humanoid")
+	local anim = hum.Animator:LoadAnimation(tool.Animation)
+
+	tool.Activated:Connect(function()
+		anim:Play()
+	end)
+end)
+
+Fling.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/LgZwZ7ZB",true))()
+end)
+
+Open.MouseButton1Click:Connect(function()
+	Frame.Visible = true
+end)
