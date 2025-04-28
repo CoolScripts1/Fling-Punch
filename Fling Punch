@@ -13,6 +13,7 @@ local Open = Instance.new("TextButton")
 ScreenGui2.Name = "ScreenGui2"
 ScreenGui2.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
 
 Frame.Parent = ScreenGui2
 Frame.BackgroundColor3 = Color3.fromRGB(89, 89, 89)
